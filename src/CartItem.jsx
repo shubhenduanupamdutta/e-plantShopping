@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import "./CartItem.css";
-import { updateQuantity } from "./CartSlice";
+import { updateQuantity, removeItem,  } from "./CartSlice";
 
 const CartItem = ({ onContinueShopping }) => {
 	const cart = useSelector((state) => state.cart.items);
