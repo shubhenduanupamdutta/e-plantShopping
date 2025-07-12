@@ -321,9 +321,8 @@ function ProductList({ onHomeClick }) {
 				<div className="product-grid">
 					{plantsArray.map((category, index) => (
 						<div key={index}>
-							{" "}
 							<h1>
-								<div>{category.category}</div>
+								<div style={{ textAlign: "center" }}>{category.category}</div>
 							</h1>
 							<div className="product-list">
 								{" "}
