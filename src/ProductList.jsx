@@ -321,9 +321,47 @@ function ProductList({ onHomeClick }) {
 				<div className="product-grid">
 					{plantsArray.map((category, index) => (
 						<div key={index}>
-							<h1>
-								<div style={{ textAlign: "center" }}>{category.category}</div>
-							</h1>
+							<div
+								style={{
+									display: "flex",
+									justifyContent: "center",
+									width: "100%",
+									marginBottom: "20px",
+									marginTop: "20px",
+								}}
+							>
+								<div
+									style={{
+										display: "inline-block",
+										textAlign: "center",
+									}}
+								>
+									<hr
+										style={{
+											border: "1px solid #031203ff",
+											margin: "0",
+											width: "100%",
+										}}
+									/>
+									<h1>
+										<div
+											style={{
+												textAlign: "center",
+												padding: "10px 0",
+											}}
+										>
+											{category.category}
+										</div>
+									</h1>
+									<hr
+										style={{
+											border: "1px solid #031203ff",
+											margin: "0",
+											width: "100%",
+										}}
+									/>
+								</div>
+							</div>
 							<div className="product-list">
 								{" "}
 								{/* Container for the list of plant cards */}
