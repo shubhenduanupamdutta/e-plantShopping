@@ -19,7 +19,7 @@ function ProductList({ onHomeClick }) {
 	const handleAddToCart = (product) => {
 		const { name, image, cost, description } = product;
 		dispatch(addItem({ name, image, cost, description }));
-		setAddedToCart((prev) => ({ ...prev, [product.name]: true })); // Update the state to indicate the item has been added
+		setAddedToCart((prev) => ({ ...prev, [product.name]: true }));
 	};
 
 	const plantsArray = [
@@ -407,10 +407,16 @@ function ProductList({ onHomeClick }) {
 										{/* Display plant description */}
 										<div className="product-cost">{plant.cost}</div> {/* Display plant cost */}
 										<button
-											className="product-button"
-											onClick={() => handleAddToCart(plant)} // Handle adding plant to cart
+											className={`product-button ${addedToCart[plant.name] ? "disabled" : ""}`}
+											onClick={() => handleAddToCart(plant)}
+											disabled={addedToCart[plant.name]}
+											style={{
+												backgroundColor: addedToCart[plant.name] ? "#cccccc" : "#4CAF50",
+												cursor: addedToCart[plant.name] ? "not-allowed" : "pointer",
+												color: addedToCart[plant.name] ? "#666666" : "white",
+											}}
 										>
-											Add to Cart
+											{addedToCart[plant.name] ? "Added to Cart" : "Add to Cart"}
 										</button>
 									</div>
 								))}
