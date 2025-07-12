@@ -297,7 +297,25 @@ function ProductList({ onHomeClick }) {
 					<div>
 						{" "}
 						<a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
-							<h1 className="cart">
+							<h1 className="cart" style={{ position: "relative" }}>
+								<div
+									style={{
+										position: "absolute",
+										top: "-10px",
+										right: "-10px",
+										backgroundColor: "red",
+										borderRadius: "50%",
+										width: "25px",
+										height: "25px",
+										display: "flex",
+										justifyContent: "center",
+										alignItems: "center",
+										color: "white",
+										fontSize: "14px",
+									}}
+								>
+									{calculateTotalQuantity()}
+								</div>
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
 									viewBox="0 0 256 256"
