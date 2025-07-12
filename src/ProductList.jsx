@@ -297,21 +297,24 @@ function ProductList({ onHomeClick }) {
 					<div>
 						{" "}
 						<a href="#" onClick={(e) => handleCartClick(e)} style={styleA}>
-							<h1 className="cart" style={{ position: "relative" }}>
+							<h1 className="cart" style={{ position: "relative", display: "inline-block" }}>
 								<div
 									style={{
 										position: "absolute",
-										top: "-10px",
-										right: "-10px",
+										bottom: "20px",
+										left: "15px",
 										backgroundColor: "red",
 										borderRadius: "50%",
-										width: "25px",
+										minWidth: "25px",
 										height: "25px",
+										padding: "0 5px",
 										display: "flex",
 										justifyContent: "center",
 										alignItems: "center",
 										color: "white",
 										fontSize: "14px",
+										zIndex: "3",
+										boxSizing: "border-box",
 									}}
 								>
 									{calculateTotalQuantity()}
